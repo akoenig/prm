@@ -237,7 +237,7 @@ case "$1" in
         ;;
     list)
         # List projects
-        if [ ! "$(find "$prm_dir" -type d | wc -l)" -gt 2 ]; then
+        if [ ! "$(find -L "$prm_dir" -type d | wc -l)" -gt 2 ]; then
             return_error 1 "No projects exist"
             return 1
         else
